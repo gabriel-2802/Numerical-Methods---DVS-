@@ -17,7 +17,7 @@ function [train, miu, F, Vk] = magic_with_pca (train_mat, pcs)
   % TODO: cast train_mat la double.
   train_mat = double(train_mat);
   
-  % TODO: calculeaza media fiecarui rand al matricii.
+   % TODO: calculeaza media fiecarui rand al matricii.
   miu = mean(train_mat)';
   
   % TODO: scade media din matricea initiala.
@@ -44,5 +44,4 @@ function [train, miu, F, Vk] = magic_with_pca (train_mat, pcs)
   F = train_mat * Vk;
   % TODO: calculeaza matricea train care este o aproximatie a matricii initiale
   train = F * Vk';
-  train = uint8(train);
 endfunction

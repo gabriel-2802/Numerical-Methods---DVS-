@@ -4,10 +4,9 @@ function sir = prepare_photo (im)
   sir = zeros (1, 784);
   
   % TODO: inverseaza pixelii imaginii im.
-  im = abs(im - 255);
-  
+  im = 255 - im;
   % TODO: transpune imaginea, iar apoi transforma imaginea intr-un sir.
   im = im';
   % HINT: functia reshape
-  sir = im(:);
+  sir = reshape(im, 1, 784);
 endfunction

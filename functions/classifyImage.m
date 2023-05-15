@@ -11,9 +11,12 @@ function prediction = classifyImage (im, train_mat, train_val, pcs)
   [train, miu, F, Vk] = magic_with_pca (train_mat, pcs);
   
   % TODO: scade din vectorul imagine media fiecarui rand din train_mat.
-  im -= miu;
+  [~, n] = size(im);
+  for j = 1 : n
+    im(:, j) = im(:, j) - miu(j);
+  endfor
   % TODO: schimbati baza inmultind cu matricea V.
-  im = im' * Vk;
+  im = im * Vk;
   % TODO: calculati predictia folosindu-va de metoda k nearest neighbour
   % implementata anterior.
   prediction = KNN(train_val, F, im, pcs);
