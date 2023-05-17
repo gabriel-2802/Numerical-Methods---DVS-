@@ -26,15 +26,14 @@ function im = visualise_image (train_mat, number)
   % initializare matrice finala.
   im = zeros (28, 28);
   
-  % TODO: citeste din matricea de antrenament coloana cu numarul number.
+  % citim din matricea de antrenament coloana cu numarul number.
   column = train_mat(number, :);
   
-  % TODO: transforma coloana citita intr-o matrice 28x28 care trebuie apoi
+  % transformam coloana citita intr-o matrice 28x28 care trebuie apoi
   % transpusa.
-  % HINT: functia reshape
   im = reshape(column, 28, 28)';
   
-  % TODO: transforma matricea in uint8 pentru a fi o imagine valida.
+  % transformam matricea in uint8 pentru a fi o imagine valida.
   im = uint8(im);
   
   %imshow (im)

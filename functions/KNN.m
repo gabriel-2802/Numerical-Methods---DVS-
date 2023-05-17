@@ -1,26 +1,25 @@
 
 function prediction = KNN (labels, Y, test, k)
-  % initializeaza prediction
+  % initializeazam prediction
   prediction = -1;
   
-  % initializeaza distantele
+  % initializeazam distantele
   [m, n] = size (Y);
   distance = zeros (m, 1);
   
-  % TODO: pentru fiecare rand calculati distanta Euclidiana dintre acesta si
+  % pentru fiecare rand calculam distanta Euclidiana dintre acesta si
   % vectorul de test primit ca argument.
   for i = 1 : m
     distance(i) = norm(Y(i,:) - test);
   endfor
   
-  % TODO: ordonati crescator distantele si tineti minte intr-un vector primele
+  % ordonam crescator distantele si tineti minte intr-un vector primele
   % k valori care reprezinta valorile adevarate ale acestor imagini care s-au
   % dovedit a fi cele mai apropiate.
-  % Hint [~,aux] = sort (...)
   [~, idx] = sort(distance);
   greatest = labels(idx);
   greatest = greatest(1 : k);
 
-  % TODO: calculati predictia ca mediana celor k valori cele mai apropiate.
+  % calculam predictia ca mediana celor k valori cele mai apropiate.
   prediction = median(greatest);
 endfunction
